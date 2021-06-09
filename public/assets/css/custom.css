@@ -1,0 +1,28 @@
+.uk-navbar-tech{
+    background: #4e5e8c !important;
+}
+
+.uk-navbar-nav > li > a {
+    text-transform: none;
+    color: seashell;
+}
+
+.uk-navbar-nav > li > a:hover {
+    color: #b5b5b5;
+}
+
+.uk-navbar-toggle {    
+    color: seashell;
+}
+
+.uk-navbar-toggle:hover {
+    color: #b5b5b5;
+}
+
+.main {
+    min-height: 85vh;
+}
+
+.h-100 {
+    height: 100vh;
+}
