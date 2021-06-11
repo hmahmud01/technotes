@@ -1,7 +1,7 @@
 import React from 'react';
 import Form from './Form';
 
-const AddNote = () => {
+const AddNote = (props) => {
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -20,7 +20,7 @@ const AddNote = () => {
                     </div>
                 </div>
                 <div class="uk-card-body">
-                    <Form />
+                    <Form title={props.title} detail={props.detail} id={props.id} titleChange={props.titleChange} detailChange={props.detailChange} edit={props.edit}/>
                 </div>
             </div>
         </div>

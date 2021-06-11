@@ -1,10 +1,23 @@
 import React, {useEffect, useState} from 'react';
-import Accordion from "./Accordion";
 import AddNote from './AddNote';
 import Note from "./Note";
 import SharedContent from './SharedContent';
 
 const Content = (props) => {    
+    const [title, setTitle] = useState("");
+    const [detail, setDetail] = useState("");
+    const [edit, setEdit] = useState(false);
+    const [id, setId] = useState(0);
+
+    
+    const titleChange = (e) => {
+        setTitle(e.target.value);
+    }
+
+    const detailChange =(e) => {
+        setDetail(e.target.value);
+    }
+
     const notes_url = "https://technotes-api.herokuapp.com/api/v1/note?page=1&size=10"
     const [note, setNote] = useState([]);
 
@@ -25,7 +38,7 @@ const Content = (props) => {
 
     const noteContent = () => {
         if (note.length != 0) {
-                return note.notes.map(el => <Note title={el.title} detail={el.details} key={el.id} id={el.id}/>)
+                return note.notes.map(el => <Note title={el.title} detail={el.details} key={el.id} id={el.id} setEdit={setEdit} setTitle={setTitle} setDetail={setDetail} setId={setId} />)
             }
         }
     
@@ -46,7 +59,7 @@ const Content = (props) => {
                         </div>
                     </div>
                     <div className="uk-width-1-3">
-                        <AddNote />
+                        <AddNote title={title} detail={detail} id={id} titleChange={titleChange} detailChange={detailChange} edit={edit}/>
                         <SharedContent />
                     </div>
                 </div>

@@ -28,7 +28,6 @@ const Note = (props) => {
             note_id: props.id
         }
 
-
         var share_api = "https://technotes-api.herokuapp.com/api/v1/note/share";
 
         const userData = localStorage.getItem("user");
@@ -53,7 +52,16 @@ const Note = (props) => {
 
     function handleChange(e) {
         setShare(e.target.value);
-      }
+    }
+
+    function editNote(){
+        props.setEdit(true);
+        props.setTitle(props.title);
+        props.setDetail(props.detail);
+        props.setId(props.id);
+    }
+
+
     return(
         <div>
             <div class="uk-card uk-card-default uk-margin">
@@ -85,7 +93,12 @@ const Note = (props) => {
                     </ul>
                 </div>
                 <div class="uk-card-footer">
-                    <a onClick={deleteNote} class="uk-button uk-button-text">Delete</a>
+                    <div class="uk-button-group">
+                        <button onClick={deleteNote} class="uk-button uk-button-danger uk-button-small">Delete</button>
+                        <button onClick={editNote} class="uk-button uk-button-secondary uk-button-small">Edit</button>
+                    </div>
+                    {/* <a onClick={deleteNote} class="uk-button uk-button-text">Delete</a> */}
+                    {/* <a onClick={editNote} class="uk-button uk-button-text">Edit</a> */}
                 </div>
             </div>
 

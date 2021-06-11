@@ -27,25 +27,11 @@ const MainApp = () => {
         });
     }
 
-
-
     const user = localStorage.getItem("user");   
-
-    // const comp = () => {
-    //     if (user) {
-    //         return <Main />
-    //     }else {
-    //         return <Login loginFunc={logIn}/>
-    //     }
-    // }
 
     const logout = () => {
         setLoggedIn(false);
     }
-
-
-
-    // const comp = jwt_token ? <Main LogoutFunc /> : <Login loginFunc={logIn} />;
 
     const comp = user ? <Main LogoutFunc = {logout} /> : <Login loginFunc={logIn} />;
 
