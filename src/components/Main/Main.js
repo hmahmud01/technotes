@@ -1,13 +1,14 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 
 import Nav from './Nav';
 import Content from './Content';
 import Footer from './Footer';
 
-const Main = () => {
+const Main = (props) => {
+
     return(
         <div>
-            <Nav />
+            <Nav logoutFunc={props.LogoutFunc} />
             <Content />
             <Footer/>
         </div>
