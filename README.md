@@ -7,7 +7,6 @@ Project Requirements:
 2. npm
 3. create-react-app 
 
-
 ## Application run Guide
 1. First clone the project `https://github.com/hmahmud01/technotes.git`
 2. Inside the directory folder run `npm install` command to install necessary libraries.
@@ -15,6 +14,8 @@ Project Requirements:
 4. go to `http://localhost:3000` to browse the application in the project.
 
 Project Url will always redirect to Login page for first time.
+
+Project Demo Link: [Heroku Link - https://secret-journey-29359.herokuapp.com/](https://secret-journey-29359.herokuapp.com/).
 
 ## Project Development and Structure
 Full Project has been designed in SPA and not responsive.
