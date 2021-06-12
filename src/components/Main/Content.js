@@ -32,15 +32,24 @@ const Content = (props) => {
                 "X-Jwt-Token": jwt_token
             }
         })
-            .then(response => response.json())
+            .then(response => response.json())            
             .then(data => setNote(data));
     }, []);
 
     const noteContent = () => {
-        if (note.length != 0) {
-                return note.notes.map(el => <Note title={el.title} detail={el.details} key={el.id} id={el.id} setEdit={setEdit} setTitle={setTitle} setDetail={setDetail} setId={setId} />)
-            }
+        if(note.notes){
+            return note.notes.map(el => <Note title={el.title} detail={el.details} key={el.id} id={el.id} setEdit={setEdit} setTitle={setTitle} setDetail={setDetail} setId={setId} />)
+        }else if(note.error){
+            // return note.notes.map(el => <Note title={el.title} detail={el.details} key={el.id} id={el.id} setEdit={setEdit} setTitle={setTitle} setDetail={setDetail} setId={setId} />)
+            console.log("reloggin the user!");
+            const userData = localStorage.getItem("user");
+            const token = JSON.parse(userData);
+            const email = token.username;
+            localStorage.removeItem("user");
+            props.dummy(email);
         }
+
+    }
     
 
     return (

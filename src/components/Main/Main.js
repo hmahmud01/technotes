@@ -9,7 +9,7 @@ const Main = (props) => {
     return(
         <div>
             <Nav logoutFunc={props.LogoutFunc} />
-            <Content />
+            <Content dummy={props.dummy}/>
             <Footer/>
         </div>
     ) 

@@ -17,6 +17,7 @@ const MainApp = () => {
             body: JSON.stringify(data)
         })
         .then(response => response.json())
+
         .then(data => {
             const user = {
                 username : username,
@@ -33,7 +34,7 @@ const MainApp = () => {
         setLoggedIn(false);
     }
 
-    const comp = user ? <Main LogoutFunc = {logout} /> : <Login loginFunc={logIn} />;
+    const comp = user ? <Main LogoutFunc = {logout} dummyLogin={Login} /> : <Login loginFunc={logIn} />;
 
     return (
         <div>
