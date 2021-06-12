@@ -2,13 +2,6 @@ import React from 'react';
 import Form from './Form';
 
 const AddNote = (props) => {
-
-    function handleSubmit(e) {
-        e.preventDefault();
-        console.log('You clicked submit.');
-        
-    }
-
     return (
         <div>
             <div class="uk-card uk-card-default uk-margin">

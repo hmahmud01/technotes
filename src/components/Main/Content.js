@@ -8,7 +8,6 @@ const Content = (props) => {
     const [detail, setDetail] = useState("");
     const [edit, setEdit] = useState(false);
     const [id, setId] = useState(0);
-
     
     const titleChange = (e) => {
         setTitle(e.target.value);
@@ -39,8 +38,7 @@ const Content = (props) => {
     const noteContent = () => {
         if(note.notes){
             return note.notes.map(el => <Note title={el.title} detail={el.details} key={el.id} id={el.id} setEdit={setEdit} setTitle={setTitle} setDetail={setDetail} setId={setId} />)
-        }else if(note.error){
-            // return note.notes.map(el => <Note title={el.title} detail={el.details} key={el.id} id={el.id} setEdit={setEdit} setTitle={setTitle} setDetail={setDetail} setId={setId} />)
+        }else if(note.error){            
             console.log("reloggin the user!");
             const userData = localStorage.getItem("user");
             const token = JSON.parse(userData);
@@ -48,9 +46,7 @@ const Content = (props) => {
             localStorage.removeItem("user");
             props.dummy(email);
         }
-
-    }
-    
+    }    
 
     return (
         <div>

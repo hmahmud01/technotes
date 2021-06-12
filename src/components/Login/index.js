@@ -1,8 +1,6 @@
 import React from 'react';
 
-
 const Login = (props) => {
-
     const loginHandle = (event) => {
         event.preventDefault();
         let username = document.getElementById("username").value;

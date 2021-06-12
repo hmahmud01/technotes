@@ -47,7 +47,6 @@ const Note = (props) => {
         .then(() => {
             window.location.reload();
         });
-
     }
 
     function handleChange(e) {
@@ -60,7 +59,6 @@ const Note = (props) => {
         props.setDetail(props.detail);
         props.setId(props.id);
     }
-
 
     return(
         <div>
@@ -97,13 +95,9 @@ const Note = (props) => {
                         <button onClick={deleteNote} class="uk-button uk-button-danger uk-button-small">Delete</button>
                         <button onClick={editNote} class="uk-button uk-button-secondary uk-button-small">Edit</button>
                     </div>
-                    {/* <a onClick={deleteNote} class="uk-button uk-button-text">Delete</a> */}
-                    {/* <a onClick={editNote} class="uk-button uk-button-text">Edit</a> */}
                 </div>
             </div>
-
         </div>
-
     )
 }
 

@@ -19,8 +19,6 @@ const SharedUsers = () => {
             .then(data => setUsers(data.models));
     }, []);
 
-    // const usersContent = users.map(el=> <SharedUser user={el.user.mail} key={el.user.id}/>)
-
     if(users){
         var usersContent = users.map(el=> <SharedUser user={el.user.mail} key={el.user.id}/>)
     }else{

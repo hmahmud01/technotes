@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import Login from './Login';
 import Main from './Main/Main';
 
@@ -17,7 +17,6 @@ const MainApp = () => {
             body: JSON.stringify(data)
         })
         .then(response => response.json())
-
         .then(data => {
             const user = {
                 username : username,

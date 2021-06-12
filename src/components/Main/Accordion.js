@@ -1,6 +1,5 @@
 import Form from "./Form"
 
-
 const Accordion = () => {
     return(
         <ul data-uk-accordion>
